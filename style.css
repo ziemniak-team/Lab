@@ -184,7 +184,86 @@ body {
     cursor: pointer;
 }
 
+/* --- RESPONSIVE ADJUSTMENTS (style.css) --- */
+
+/* Poprawka dla kontenera - lepsze marginesy na telefonach */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; /* Mniejszy padding na boki */
+}
+
+/* Navbar - na mobile przechodzi w układ kolumnowy lub zwinięty */
+@media (max-width: 992px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .controls-panel {
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 10px;
+        border-top: 1px solid var(--border);
+    }
+}
+
+/* Hero Section - dopasowanie tekstu */
 @media (max-width: 768px) {
-    .nav-links, .controls-panel label { display: none; }
-    .hero-title { font-size: 3rem; }
+    .hero-section {
+        height: auto;
+        padding: 120px 20px 60px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem; /* Mniejszy font by nie rozbijał linii */
+    }
+
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%; /* Przyciski na całą szerokość */
+        text-align: center;
+    }
+}
+
+/* Gridy - zmiana z 3 kolumn na 1 */
+@media (max-width: 768px) {
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-mosaic {
+        grid-template-columns: 1fr 1fr; /* 2 kolumny w galerii na mobile */
+    }
+
+    .article-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .article-info {
+        margin-left: 0;
+    }
+}
+
+/* Formularz - pełna szerokość */
+@media (max-width: 480px) {
+    .form-wrapper {
+        padding: 20px;
+        border-radius: 0; /* Na bardzo małych ekranach lepiej wygląda bez zaokrągleń */
+    }
 }
