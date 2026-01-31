@@ -3,225 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LaB - Open Source Space Exploration. Non-profit initiative building the future of humanity beyond Earth.">
     <title>LaB | Life and Beyond - Open Source Future</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&family=VT323&family=Cinzel:wght@400;700&family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;500;700&family=VT323&family=Cinzel:wght@400;700&family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">   <link rel="stylesheet" href="themes.css">  </head>
 <body>
 
-    <div class="nebula-bg"></div>
-    <div class="grid-overlay"></div>
+    <div class="bg-layer base"></div>
+    <div class="bg-layer nebula"></div>
+    <div class="bg-layer grid-overlay"></div>
 
-    <header>
-        <nav>
-            <div class="logo-container">
-                <a href="#" class="logo" id="dynamic-logo">LaB<span class="dot">.</span></a>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="logo-wrapper">
+                <a href="#" class="logo">LaB<span class="accent-dot">.</span></a>
             </div>
             
             <ul class="nav-links">
-                <li><a href="#manifesto">Manifesto</a></li>
-                <li><a href="#missions">Missions</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#knowledge">Knowledge</a></li>
-                <li><a href="#join" class="join-btn-nav">Join Crew</a></li>
+                <li><a href="#manifesto" class="nav-item">Manifesto</a></li>
+                <li><a href="#missions" class="nav-item">Missions</a></li>
+                <li><a href="#gallery" class="nav-item">Gallery</a></li>
+                <li><a href="#knowledge" class="nav-item">Knowledge</a></li>
             </ul>
 
-            <div class="settings-panel">
-                <div class="select-wrapper">
-                    <label>THEME</label>
-                    <select id="theme-select">
-                        <option value="deep-void">Deep Void (OLED)</option>
-                        <option value="potato">🥔 Potato (Low RAM)</option>
-                        <option value="retro-voyager">Retro Voyager (80s)</option>
-                        <option value="marsian-dust">Marsian Dust</option>
-                        <option value="titan-ice">Titan Ice</option>
-                        <option value="cyber-punk">Night City</option>
+            <div class="controls-panel">
+                <div class="control-group">
+                    <label for="theme-select">THEME</label>
+                    <select id="theme-select" name="theme">
+                        <option value="deep-void">Deep Void (Default)</option>
+                        <option value="potato">Potato (Low Res)</option>
+                        <option value="night-city">Night City (Neon)</option>
+                        <option value="retro-voyager">Retro Voyager (Terminal)</option>
+                        <option value="marsian-dust">Marsian Dust (Red)</option>
+                        <option value="titan-ice">Titan Ice (Cyan)</option>
+                        <option value="bio-hazard">Bio Hazard (Toxic Green)</option>
+                        <option value="solar-flare">Solar Flare (Light Mode)</option>
                     </select>
                 </div>
 
-                <div class="select-wrapper">
-                    <label>FONT</label>
-                    <select id="font-select">
-                        <option value="auto">Theme Default</option>
-                        <option value="clean">Clean (Inter)</option>
-                        <option value="retro">Pixel (VT323)</option>
+                <div class="control-group">
+                    <label for="font-select">TYPOGRAPHY</label>
+                    <select id="font-select" name="font">
+                        <option value="auto">System Auto</option>
+                        <option value="clean">Modern Sans (Inter)</option>
                         <option value="tech">Sci-Fi (Orbitron)</option>
-                        <option value="serif">Classic (Cinzel)</option>
-                        <option value="mono">Code (Share Tech)</option>
+                        <option value="retro">Pixel (VT323)</option>
+                        <option value="mono">Engineer (Mono)</option>
+                        <option value="serif">Journal (Serif)</option>
                     </select>
                 </div>
+                
+                <a href="#join" class="btn-join-nav">Join Crew</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <span class="hero-tag">OPEN SOURCE INITIATIVE</span>
-                <h1>Humanity Beyond<br>The Horizon.</h1>
-                <p>We build AI, Robotics, and Astronomy tech to enable life outside the Solar System. No profit margins. Pure passion.</p>
-                <div class="cta-group">
-                    <a href="#missions" class="btn primary">Explore Missions</a>
-                    <a href="#join" class="btn secondary">Read Manifesto</a>
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-badge">NON-PROFIT INITIATIVE</div>
+                <h1 class="hero-title">Humanity Beyond<br>The Horizon.</h1>
+                <p class="hero-desc">We build AI, Robotics, and Astronomy tech to enable life outside the Solar System. No profit margins. Pure passion.</p>
+                <div class="hero-actions">
+                    <a href="#missions" class="btn btn-primary">Explore Missions</a>
+                    <a href="#manifesto" class="btn btn-outline">Read Manifesto</a>
                 </div>
             </div>
         </section>
 
-        <section id="manifesto" class="section-container">
-            <div class="glass-panel">
-                <h2 class="section-title">The LaB Manifesto</h2>
-                <div class="manifesto-grid">
-                    <div class="m-item">
-                        <h3>01. Open Source</h3>
-                        <p>Every line of code and every CAD drawing belongs to humanity. We share everything.</p>
-                    </div>
-                    <div class="m-item">
-                        <h3>02. At-Cost Hardware</h3>
-                        <p>We sell devices for the price of raw materials. Zero profit, zero dividends.</p>
-                    </div>
-                    <div class="m-item">
-                        <h3>03. Passion Driven</h3>
-                        <p>No corporate ladder. Only engineers and dreamers building the future together.</p>
-                    </div>
+        <section id="manifesto" class="section-block">
+            <div class="container glass-panel">
+                <header class="section-header">
+                    <h2 class="section-title">The LaB Manifesto</h2>
+                    <div class="section-line"></div>
+                </header>
+                <div class="grid-3 manifesto-features">
+                    <article class="feature-item">
+                        <h3 class="feature-title">01. Open Source</h3>
+                        <p>Every line of code and every CAD drawing belongs to humanity. We share everything publicly.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3 class="feature-title">02. At-Cost Hardware</h3>
+                        <p>We sell devices for the price of raw materials. Zero profit, zero dividends, zero corporate greed.</p>
+                    </article>
+                    <article class="feature-item">
+                        <h3 class="feature-title">03. Passion Driven</h3>
+                        <p>No corporate ladder. Only engineers, scientists, and dreamers building the future together.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="missions" class="section-container">
-            <h2 class="section-title">Active Missions</h2>
-            <div class="card-grid">
-                <article class="project-card">
-                    <div class="card-image">
-                        <img src="https://placehold.co/600x400/111/3399ff?text=AI+Core" alt="AI Core">
-                        <span class="status active">Active Dev</span>
-                    </div>
-                    <div class="card-body">
-                        <h3>Project AURA</h3>
-                        <p class="tech-font">Autonomous life-support AI. Manages oxygen, water cycles, and energy in off-world colonies.</p>
-                        <div class="card-actions">
-                            <button class="btn small">GitHub</button>
-                            <button class="btn small outline">Docs</button>
+        <section id="missions" class="section-block">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Active Missions</h2>
+                </header>
+                
+                <div class="grid-3 projects-grid">
+                    <article class="project-card">
+                        <div class="card-media">
+                            <img src="https://placehold.co/600x400/0f0f0f/3399ff?text=Project+AURA" alt="Project AURA Interface" loading="lazy">
+                            <span class="status-badge status-active">Active Dev</span>
                         </div>
-                    </div>
-                </article>
+                        <div class="card-content">
+                            <h3>Project AURA</h3>
+                            <p class="tech-specs">Autonomous life-support AI. Manages oxygen, water cycles, and energy in off-world colonies.</p>
+                            <div class="card-footer">
+                                <button class="btn-text">GitHub Repo &rarr;</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <article class="project-card">
-                    <div class="card-image">
-                        <img src="https://placehold.co/600x400/221100/ff5500?text=M-STRIDER" alt="Robot">
-                        <span class="status testing">Prototype</span>
-                    </div>
-                    <div class="card-body">
-                        <h3>M-STRIDER</h3>
-                        <p class="tech-font">Hexapod walker for lava tubes. Designed to be 3D printed on Mars using local regolith.</p>
-                        <div class="card-actions">
-                            <button class="btn small">Download CAD</button>
-                            <button class="btn small outline">Specs</button>
+                    <article class="project-card">
+                        <div class="card-media">
+                            <img src="https://placehold.co/600x400/1a0a05/ff5500?text=M-STRIDER" alt="M-STRIDER Robot" loading="lazy">
+                            <span class="status-badge status-proto">Prototype</span>
                         </div>
-                    </div>
-                </article>
+                        <div class="card-content">
+                            <h3>M-STRIDER</h3>
+                            <p class="tech-specs">Hexapod walker for lava tubes. Designed to be 3D printed on Mars using local regolith.</p>
+                            <div class="card-footer">
+                                <button class="btn-text">CAD Files &rarr;</button>
+                            </div>
+                        </div>
+                    </article>
 
-                <article class="project-card">
-                    <div class="card-image">
-                        <img src="https://placehold.co/600x400/001122/00ccff?text=DeepScope" alt="Telescope">
-                        <span class="status stable">Stable</span>
-                    </div>
-                    <div class="card-body">
-                        <h3>DeepScope v2</h3>
-                        <p class="tech-font">Distributed telescope network for NEO detection. Build one in your backyard for under $500.</p>
-                        <div class="card-actions">
-                            <button class="btn small">Build Guide</button>
+                    <article class="project-card">
+                        <div class="card-media">
+                            <img src="https://placehold.co/600x400/00111a/00ccff?text=DeepScope" alt="DeepScope Telescope" loading="lazy">
+                            <span class="status-badge status-stable">Stable</span>
                         </div>
-                    </div>
-                </article>
+                        <div class="card-content">
+                            <h3>DeepScope v2</h3>
+                            <p class="tech-specs">Distributed telescope network for NEO detection. Build one in your backyard for under $500.</p>
+                            <div class="card-footer">
+                                <button class="btn-text">Build Guide &rarr;</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section id="gallery" class="section-container">
-            <h2 class="section-title">Visual Log</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://placehold.co/400x400/1a1a1a/FFF?text=Base+Alpha" alt="Base"></div>
-                <div class="gallery-item"><img src="https://placehold.co/400x400/1a1a1a/FFF?text=PCB+Layout" alt="Electronics"></div>
-                <div class="gallery-item"><img src="https://placehold.co/400x400/1a1a1a/FFF?text=Mars+Terrain" alt="Mars"></div>
-                <div class="gallery-item"><img src="https://placehold.co/400x400/1a1a1a/FFF?text=Engine+Test" alt="Engine"></div>
+        <section id="gallery" class="section-block">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Visual Log</h2>
+                </header>
+                <div class="gallery-mosaic">
+                    <figure class="gallery-item"><img src="https://placehold.co/400x400/111/444?text=Base+Alpha" alt="Mars Base Alpha Concept"></figure>
+                    <figure class="gallery-item"><img src="https://placehold.co/400x400/111/444?text=PCB+v3.2" alt="Circuit Board"></figure>
+                    <figure class="gallery-item"><img src="https://placehold.co/400x400/111/444?text=Lava+Tube" alt="Lava Tube Simulation"></figure>
+                    <figure class="gallery-item"><img src="https://placehold.co/400x400/111/444?text=Engine+Test" alt="Rocket Engine Test"></figure>
+                </div>
             </div>
         </section>
 
-        <section id="knowledge" class="section-container">
-            <h2 class="section-title">Knowledge Base</h2>
-            <div class="articles-wrapper">
-                <a href="#" class="article-row">
-                    <div class="art-date">JAN 31, 2026</div>
-                    <div class="art-content">
-                        <h4>Why "For Profit" Space Exploration is a Dead End</h4>
-                        <p>An analysis on sustainability of open-source vs corporate models.</p>
-                    </div>
-                    <div class="art-icon">→</div>
-                </a>
-                <a href="#" class="article-row">
-                    <div class="art-date">JAN 15, 2026</div>
-                    <div class="art-content">
-                        <h4>Building M-STRIDER: The Leg Mechanism</h4>
-                        <p>Technical deep dive into the inverse kinematics of our walker.</p>
-                    </div>
-                    <div class="art-icon">→</div>
-                </a>
-                <a href="#" class="article-row">
-                    <div class="art-date">DEC 20, 2025</div>
-                    <div class="art-content">
-                        <h4>Communication Protocol for 100 AU Distances</h4>
-                        <p>Introducing the new low-bandwidth data compression standard.</p>
-                    </div>
-                    <div class="art-icon">→</div>
-                </a>
+        <section id="knowledge" class="section-block">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Knowledge Base</h2>
+                </header>
+                <div class="articles-list">
+                    <a href="#" class="article-item">
+                        <time datetime="2026-01-31">JAN 31, 2026</time>
+                        <div class="article-info">
+                            <h4>Why "For Profit" Space Exploration is a Dead End</h4>
+                            <p>An analysis on sustainability of open-source vs corporate models.</p>
+                        </div>
+                        <span class="icon-arrow">&rarr;</span>
+                    </a>
+                    <a href="#" class="article-item">
+                        <time datetime="2026-01-15">JAN 15, 2026</time>
+                        <div class="article-info">
+                            <h4>Building M-STRIDER: The Leg Mechanism</h4>
+                            <p>Technical deep dive into the inverse kinematics of our walker.</p>
+                        </div>
+                        <span class="icon-arrow">&rarr;</span>
+                    </a>
+                    <a href="#" class="article-item">
+                        <time datetime="2025-12-20">DEC 20, 2025</time>
+                        <div class="article-info">
+                            <h4>Communication Protocol for 100 AU Distances</h4>
+                            <p>Introducing the new low-bandwidth data compression standard.</p>
+                        </div>
+                        <span class="icon-arrow">&rarr;</span>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section id="join" class="section-container">
-            <div class="form-container">
-                <div class="form-header">
+        <section id="join" class="section-block join-section">
+            <div class="form-wrapper">
+                <div class="form-intro">
                     <h2>Join the Crew</h2>
-                    <p>We don't pay in cash. We pay in legacy.</p>
+                    <p>We don't pay in cash. We pay in legacy. Identify yourself.</p>
                 </div>
-                <form id="join-form">
-                    <div class="input-group">
-                        <input type="text" placeholder=" " required>
-                        <label>Callsign / Name</label>
+                <form id="join-form" class="lab-form">
+                    <div class="form-group">
+                        <label for="name" class="sr-only">Callsign / Name</label>
+                        <input type="text" id="name" placeholder="Callsign / Name" required>
                     </div>
-                    <div class="input-group">
-                        <input type="email" placeholder=" " required>
-                        <label>Signal Frequency (Email)</label>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Frequency (Email)</label>
+                        <input type="email" id="email" placeholder="Signal Frequency (Email)" required>
                     </div>
-                    <div class="input-group">
-                        <select required>
-                            <option value="" disabled selected>Select Role</option>
+                    <div class="form-group">
+                        <label for="role" class="sr-only">Role</label>
+                        <select id="role" required>
+                            <option value="" disabled selected>Select Your Role</option>
                             <option value="ai">AI Architect</option>
                             <option value="mech">Mechanical Engineer</option>
                             <option value="astro">Astrophysicist</option>
+                            <option value="bio">Exobiologist</option>
                             <option value="fan">Enthusiast / Support</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn primary full">Transmit Application</button>
+                    <button type="submit" class="btn btn-primary btn-full">Transmit Application</button>
                 </form>
             </div>
         </section>
 
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="f-col">
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
                 <h3>LaB.</h3>
                 <p>Life and Beyond.</p>
             </div>
-            <div class="f-col">
-                <a href="#">GitHub</a>
-                <a href="#">Discord</a>
-                <a href="#">Docs</a>
+            <div class="footer-links">
+                <a href="#">GitHub Repository</a>
+                <a href="#">Discord Server</a>
+                <a href="#">Documentation</a>
+                <a href="#">Donate (Hardware)</a>
             </div>
-            <div class="f-col">
-                <p class="copyright">© 2026 Open Source License.</p>
+            <div class="footer-legal">
+                <p>© 2026 Open Source License (MIT/Apache). Humanity First.</p>
             </div>
         </div>
     </footer>
