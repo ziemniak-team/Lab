@@ -1,41 +1,57 @@
 <!DOCTYPE html>
-<html lang="pl" data-theme="deep-void">
+<html lang="en" data-theme="deep-void" data-font="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaB | Life and Beyond</title>
+    <title>LaB | Life and Beyond - Open Source Future</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Inter:wght@300;400;600&family=VT323&family=Libre+Baskerville&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@300;500;700&family=VT323&family=Cinzel:wght@400;700&family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-<body class="font-default">
-    
-    <div class="background-layer"></div>
+<body>
+
+    <div class="nebula-bg"></div>
+    <div class="grid-overlay"></div>
 
     <header>
         <nav>
-            <div class="logo">LaB<span>.</span></div>
+            <div class="logo-container">
+                <a href="#" class="logo" id="dynamic-logo">LaB<span class="dot">.</span></a>
+            </div>
+            
             <ul class="nav-links">
-                <li><a href="#manifest">Manifest</a></li>
-                <li><a href="#missions">Misje</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#articles">Baza Wiedzy</a></li>
-                <li><a href="#join" class="join-link">Dołącz</a></li>
+                <li><a href="#manifesto">Manifesto</a></li>
+                <li><a href="#missions">Missions</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#knowledge">Knowledge</a></li>
+                <li><a href="#join" class="join-btn-nav">Join Crew</a></li>
             </ul>
-            <div class="controls">
-                <select id="theme-select">
-                    <option value="deep-void">Deep Void (Domyślny)</option>
-                    <option value="ziemniak">🥔 Ziemniak (Szybki)</option>
-                    <option value="retro-voyager">Retro Voyager</option>
-                    <option value="marsian-dust">Marsian Dust</option>
-                    <option value="titan-ice">Titan Ice</option>
-                </select>
-                <select id="font-select">
-                    <option value="font-default">Font: Auto</option>
-                    <option value="font-retro">Font: Retro (Terminal)</option>
-                    <option value="font-clean">Font: Czytelny (Inter)</option>
-                    <option value="font-tech">Font: Tech (Space)</option>
-                    <option value="font-classic">Font: Klasyk (Szeryf)</option>
-                </select>
+
+            <div class="settings-panel">
+                <div class="select-wrapper">
+                    <label>THEME</label>
+                    <select id="theme-select">
+                        <option value="deep-void">Deep Void (OLED)</option>
+                        <option value="potato">🥔 Potato (Low RAM)</option>
+                        <option value="retro-voyager">Retro Voyager (80s)</option>
+                        <option value="marsian-dust">Marsian Dust</option>
+                        <option value="titan-ice">Titan Ice</option>
+                        <option value="cyber-punk">Night City</option>
+                    </select>
+                </div>
+
+                <div class="select-wrapper">
+                    <label>FONT</label>
+                    <select id="font-select">
+                        <option value="auto">Theme Default</option>
+                        <option value="clean">Clean (Inter)</option>
+                        <option value="retro">Pixel (VT323)</option>
+                        <option value="tech">Sci-Fi (Orbitron)</option>
+                        <option value="serif">Classic (Cinzel)</option>
+                        <option value="mono">Code (Share Tech)</option>
+                    </select>
+                </div>
             </div>
         </nav>
     </header>
@@ -43,122 +59,171 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Beyond Earth.<br>Beyond Profit.</h1>
-                <p>Budujemy przyszłość ludzkości poza Ziemią. <br>Open-source. Bez marży. Z czystej pasji.</p>
+                <span class="hero-tag">OPEN SOURCE INITIATIVE</span>
+                <h1>Humanity Beyond<br>The Horizon.</h1>
+                <p>We build AI, Robotics, and Astronomy tech to enable life outside the Solar System. No profit margins. Pure passion.</p>
                 <div class="cta-group">
-                    <a href="#missions" class="primary-btn">Zobacz Misje</a>
-                    <a href="#join" class="secondary-btn">Zostań Pasjonatem</a>
+                    <a href="#missions" class="btn primary">Explore Missions</a>
+                    <a href="#join" class="btn secondary">Read Manifesto</a>
                 </div>
             </div>
         </section>
 
-        <section id="manifest" class="content-section">
-            <div class="section-box">
-                <h2 class="section-title">Manifest LaB</h2>
-                <div class="manifest-grid">
+        <section id="manifesto" class="section-container">
+            <div class="glass-panel">
+                <h2 class="section-title">The LaB Manifesto</h2>
+                <div class="manifesto-grid">
                     <div class="m-item">
-                        <h3>Open Source</h3>
-                        <p>Kod i schematy należą do ludzkości. Udostępniamy wszystko.</p>
+                        <h3>01. Open Source</h3>
+                        <p>Every line of code and every CAD drawing belongs to humanity. We share everything.</p>
                     </div>
                     <div class="m-item">
-                        <h3>At-Cost Hardware</h3>
-                        <p>Płacisz za surowce i energię. Zero zysku dla firmy.</p>
+                        <h3>02. At-Cost Hardware</h3>
+                        <p>We sell devices for the price of raw materials. Zero profit, zero dividends.</p>
                     </div>
                     <div class="m-item">
-                        <h3>Community Driven</h3>
-                        <p>Brak prezesów. Decydują inżynierowie i pasjonaci.</p>
+                        <h3>03. Passion Driven</h3>
+                        <p>No corporate ladder. Only engineers and dreamers building the future together.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="missions" class="content-section">
-            <h2 class="section-title">Aktywne Misje</h2>
-            <div class="grid-3">
-                <article class="card">
-                    <div class="card-header">AI / SYSTEM</div>
-                    <h3>Project AURA</h3>
-                    <p>System podtrzymywania życia zarządzany przez AI. Optymalizacja tlenu i wody w bazach.</p>
-                    <button class="small-btn">Repozytorium</button>
+        <section id="missions" class="section-container">
+            <h2 class="section-title">Active Missions</h2>
+            <div class="card-grid">
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/600x400/111/3399ff?text=AI+Core" alt="AI Core">
+                        <span class="status active">Active Dev</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Project AURA</h3>
+                        <p class="tech-font">Autonomous life-support AI. Manages oxygen, water cycles, and energy in off-world colonies.</p>
+                        <div class="card-actions">
+                            <button class="btn small">GitHub</button>
+                            <button class="btn small outline">Docs</button>
+                        </div>
+                    </div>
                 </article>
-                <article class="card">
-                    <div class="card-header">ROBOTYKA</div>
-                    <h3>M-STRIDER</h3>
-                    <p>Łazik kroczący do jaskiń lawowych. Druk 3D + tania elektronika.</p>
-                    <button class="small-btn">Pliki CAD</button>
+
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/600x400/221100/ff5500?text=M-STRIDER" alt="Robot">
+                        <span class="status testing">Prototype</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>M-STRIDER</h3>
+                        <p class="tech-font">Hexapod walker for lava tubes. Designed to be 3D printed on Mars using local regolith.</p>
+                        <div class="card-actions">
+                            <button class="btn small">Download CAD</button>
+                            <button class="btn small outline">Specs</button>
+                        </div>
+                    </div>
                 </article>
-                <article class="card">
-                    <div class="card-header">ASTRONOMIA</div>
-                    <h3>DeepScope</h3>
-                    <p>Sieć tanich teleskopów do śledzenia asteroid NEO.</p>
-                    <button class="small-btn">Dokumentacja</button>
+
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/600x400/001122/00ccff?text=DeepScope" alt="Telescope">
+                        <span class="status stable">Stable</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>DeepScope v2</h3>
+                        <p class="tech-font">Distributed telescope network for NEO detection. Build one in your backyard for under $500.</p>
+                        <div class="card-actions">
+                            <button class="btn small">Build Guide</button>
+                        </div>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section id="gallery" class="content-section">
-            <h2 class="section-title">Galeria Prototypów</h2>
+        <section id="gallery" class="section-container">
+            <h2 class="section-title">Visual Log</h2>
             <div class="gallery-grid">
-                <div class="gallery-item"><span>Wizualizacja Bazy Alpha</span></div>
-                <div class="gallery-item"><span>Schemat Silnika</span></div>
-                <div class="gallery-item"><span>M-STRIDER v1.0 (Testy)</span></div>
-                <div class="gallery-item"><span>Warsztat Społeczności</span></div>
+                <div class="gallery-item"><img src="https://placehold.co/400x400/1a1a1a/FFF?text=Base+Alpha" alt="Base"></div>
+                <div class="gallery-item"><img src="https://placehold.co/400x400/1a1a1a/FFF?text=PCB+Layout" alt="Electronics"></div>
+                <div class="gallery-item"><img src="https://placehold.co/400x400/1a1a1a/FFF?text=Mars+Terrain" alt="Mars"></div>
+                <div class="gallery-item"><img src="https://placehold.co/400x400/1a1a1a/FFF?text=Engine+Test" alt="Engine"></div>
             </div>
         </section>
 
-        <section id="articles" class="content-section">
-            <h2 class="section-title">Baza Wiedzy (Articles)</h2>
-            <div class="articles-list">
-                <a href="articles/open-source-space.html" class="article-row">
-                    <span class="date">31 STY 2026</span>
-                    <div class="art-info">
-                        <h4>Why Open Source is the Future of Space?</h4>
-                        <small>Analiza kosztów kolonizacji.</small>
+        <section id="knowledge" class="section-container">
+            <h2 class="section-title">Knowledge Base</h2>
+            <div class="articles-wrapper">
+                <a href="#" class="article-row">
+                    <div class="art-date">JAN 31, 2026</div>
+                    <div class="art-content">
+                        <h4>Why "For Profit" Space Exploration is a Dead End</h4>
+                        <p>An analysis on sustainability of open-source vs corporate models.</p>
                     </div>
-                    <span class="arrow">→</span>
+                    <div class="art-icon">→</div>
                 </a>
-                <a href="articles/titan-rover.html" class="article-row">
-                    <span class="date">15 STY 2026</span>
-                    <div class="art-info">
-                        <h4>Building a Rover for Titan in your Garage</h4>
-                        <small>Poradnik doboru materiałów odpornych na metan.</small>
+                <a href="#" class="article-row">
+                    <div class="art-date">JAN 15, 2026</div>
+                    <div class="art-content">
+                        <h4>Building M-STRIDER: The Leg Mechanism</h4>
+                        <p>Technical deep dive into the inverse kinematics of our walker.</p>
                     </div>
-                    <span class="arrow">→</span>
+                    <div class="art-icon">→</div>
+                </a>
+                <a href="#" class="article-row">
+                    <div class="art-date">DEC 20, 2025</div>
+                    <div class="art-content">
+                        <h4>Communication Protocol for 100 AU Distances</h4>
+                        <p>Introducing the new low-bandwidth data compression standard.</p>
+                    </div>
+                    <div class="art-icon">→</div>
                 </a>
             </div>
         </section>
 
-        <section id="join" class="content-section">
-            <div class="form-wrapper">
-                <h2>Dołącz do Załogi</h2>
-                <p>Szukamy inżynierów, programistów i marzycieli.</p>
-                <form id="lab-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Twój Nick / Imię" required>
+        <section id="join" class="section-container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Join the Crew</h2>
+                    <p>We don't pay in cash. We pay in legacy.</p>
+                </div>
+                <form id="join-form">
+                    <div class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label>Callsign / Name</label>
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Kontakt Email" required>
+                    <div class="input-group">
+                        <input type="email" placeholder=" " required>
+                        <label>Signal Frequency (Email)</label>
                     </div>
-                    <div class="form-group">
-                        <select>
-                            <option value="" disabled selected>Twoja Specjalizacja</option>
-                            <option value="ai">AI & Software</option>
-                            <option value="hard">Hardware & Robotyka</option>
-                            <option value="astro">Astronomia</option>
-                            <option value="fan">Pasjonat / Nauka</option>
+                    <div class="input-group">
+                        <select required>
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="ai">AI Architect</option>
+                            <option value="mech">Mechanical Engineer</option>
+                            <option value="astro">Astrophysicist</option>
+                            <option value="fan">Enthusiast / Support</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <textarea rows="4" placeholder="Nad czym chciałbyś pracować w LaB?"></textarea>
-                    </div>
-                    <button type="submit" class="primary-btn full-width">Wyślij Zgłoszenie</button>
+                    <button type="submit" class="btn primary full">Transmit Application</button>
                 </form>
             </div>
         </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 LaB (Life and Beyond). Open Source Space Exploration.</p>
+        <div class="footer-content">
+            <div class="f-col">
+                <h3>LaB.</h3>
+                <p>Life and Beyond.</p>
+            </div>
+            <div class="f-col">
+                <a href="#">GitHub</a>
+                <a href="#">Discord</a>
+                <a href="#">Docs</a>
+            </div>
+            <div class="f-col">
+                <p class="copyright">© 2026 Open Source License.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
