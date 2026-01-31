@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaB | Life and Beyond - Open Source Space Tech</title>
+    <title>LaB | Life and Beyond</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -16,7 +16,6 @@
                 <li><a href="#projects">Projekty</a></li>
                 <li><a href="#articles">Artykuły</a></li>
                 <li><a href="#finance">Transparentność</a></li>
-                <li><a href="#join">Dołącz</a></li>
             </ul>
             <div class="controls">
                 <select id="theme-select">
@@ -24,7 +23,9 @@
                     <option value="marsian-dust">Marsian Dust</option>
                     <option value="retro-voyager">Retro Voyager</option>
                     <option value="moonlight">Moonlight</option>
+                    <option value="nebula">Nebula Dreams</option>
                     <option value="supernova">Supernova</option>
+                    <option value="titan-ice">Titan Ice</option>
                 </select>
                 <button class="login-btn">Logowanie</button>
             </div>
@@ -35,104 +36,69 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Ludzkość poza horyzontem.</h1>
-                <p>Projektujemy AI, roboty i systemy astronomiczne, aby umożliwić życie poza Ziemią. Bez zysku, z czystej pasji do eksploracji.</p>
+                <p>LaB to firma open-source budująca przyszłość. Tworzymy AI, robotykę i technologię kosmiczną dostępną dla każdego.</p>
                 <div class="cta-group">
                     <a href="#projects" class="primary-btn">Eksploruj Projekty</a>
-                    <a href="#join" class="secondary-btn">Zostań Pasjonatem</a>
+                    <a href="#join" class="secondary-btn">Dołącz do nas</a>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="section-container">
             <h2 class="section-title">Nasze Misje</h2>
-            <p class="section-subtitle">Wszystkie projekty są open-source. Buduj z nami lub pobierz dokumentację.</p>
-            
             <div class="project-grid">
                 <article class="project-card">
                     <div class="project-icon">🧠</div>
                     <h3>Project AURA</h3>
-                    <p>Autonomiczne AI zarządzające zasobami w bazach marsjańskich. Optymalizuje tlen i energię.</p>
-                    <div class="project-footer">
-                        <span class="status-tag">Prototyp</span>
-                        <button class="icon-btn">Repozytorium</button>
-                    </div>
+                    <p>Autonomiczne AI do zarządzania zasobami w bazach pozaziemskich. Open-source i za darmo.</p>
+                    <span class="status-tag">Status: Prototyp</span>
                 </article>
 
                 <article class="project-card">
                     <div class="project-icon">🤖</div>
                     <h3>M-STRIDER</h3>
-                    <p>Robot kroczący do eksploracji jaskiń księżycowych. Pełne plany druku 3D dostępne za darmo.</p>
-                    <div class="project-footer">
-                        <span class="status-tag">Testy</span>
-                        <button class="icon-btn">Pliki CAD</button>
-                    </div>
+                    <p>Robot kroczący do eksploracji jaskiń lawowych. Plany CAD dostępne po kosztach produkcji.</p>
+                    <span class="status-tag">Status: Testy</span>
                 </article>
 
                 <article class="project-card">
                     <div class="project-icon">🔭</div>
-                    <h3>DeepScope v2</h3>
-                    <p>Sieć tanich teleskopów do wykrywania zagrożeń z głębokiego kosmosu przez amatorów.</p>
-                    <div class="project-footer">
-                        <span class="status-tag">Aktywny</span>
-                        <button class="icon-btn">Dokumentacja</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <hr class="divider">
-
-        <section id="articles" class="section-container">
-            <div class="section-header">
-                <h2 class="section-title">Baza Wiedzy</h2>
-                <button class="text-link">Wszystkie wpisy →</button>
-            </div>
-            <div class="article-grid">
-                <article class="article-card">
-                    <span class="date">31 STY 2026</span>
-                    <h4>Jak przesyłać dane na odległość 1 AU?</h4>
-                    <p>Opracowaliśmy nowy protokół kompresji dla dalekiej łączności...</p>
-                </article>
-                <article class="article-card">
-                    <span class="date">20 STY 2026</span>
-                    <h4>Hardware "At-Cost" - jak to robimy?</h4>
-                    <p>Kulisy współpracy z dostawcami surowców bez marży pośredników...</p>
+                    <h3>DeepScope</h3>
+                    <p>Tani system obserwacji NEO (Near Earth Objects) dla pasjonatów astronomii.</p>
+                    <span class="status-tag">Status: Aktywny</span>
                 </article>
             </div>
         </section>
 
         <section id="finance" class="finance-section">
             <div class="finance-card">
-                <h2>Gdzie trafiają Twoje pieniądze?</h2>
-                <p>LaB to fundacja pasjonatów. Każda złotówka służy postępowi, nie zyskom.</p>
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <span class="stat-value">90%</span>
-                        <span class="stat-label">Surowce i Materiały</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">10%</span>
-                        <span class="stat-label">Utrzymanie i Podatki</span>
-                    </div>
-                    <div class="stat-item highlight">
-                        <span class="stat-value">0%</span>
-                        <span class="stat-label">Zysk Własny</span>
-                    </div>
+                <h2>Model Finansowy 0% Zysku</h2>
+                <p>Każda wpłata finansuje materiały i edukację pasjonatów. Nie pobieramy dywidend.</p>
+                <div class="stats">
+                    <div class="stat"><span>90%</span><small>Materiały</small></div>
+                    <div class="stat"><span>10%</span><small>Utrzymanie</small></div>
+                    <div class="stat active"><span>0%</span><small>Zysk</small></div>
                 </div>
             </div>
         </section>
 
+        <section id="articles" class="section-container">
+            <h2 class="section-title">Ostatnie Artykuły</h2>
+            <div class="article-list">
+                <div class="article-item">
+                    <small>31 STY 2026</small>
+                    <h4>Jak Open Source zmieni podbój kosmosu?</h4>
+                </div>
+                <div class="article-item">
+                    <small>15 STY 2026</small>
+                    <h4>Budowa pierwszego M-STRIDERA w garażu.</h4>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 LaB (Life and Beyond). Kod i technologia na licencji Open Source.</p>
-            <div class="socials">
-                <a href="#">GitHub</a>
-                <a href="#">Discord</a>
-                <a href="#">Twitter</a>
-            </div>
-        </div>
+        <p>&copy; 2026 LaB (Life and Beyond) - Wizja poza Ziemię.</p>
     </footer>
 
     <script src="script.js"></script>
