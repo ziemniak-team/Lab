@@ -1,64 +1,93 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Cache DOM elements
+    // --- DOM Elements ---
     const themeSelect = document.getElementById('theme-select');
     const fontSelect = document.getElementById('font-select');
-    const html = document.documentElement;
-    const logoLink = document.getElementById('dynamic-logo');
+    const joinForm = document.getElementById('join-form');
+    const htmlElement = document.documentElement;
 
-    // --- LOGIC: UPDATE LOGO BASED ON THEME ---
-    const updateLogo = (theme) => {
-        if (theme === 'retro-voyager') {
-            logoLink.innerHTML = 'SYS.LaB<span class="dot">_</span>';
-        } else if (theme === 'potato') {
-            logoLink.innerHTML = 'LaB <small>(Lite)</small>';
-        } else if (theme === 'cyber-punk') {
-            logoLink.innerHTML = 'LaB<span class="dot">2077</span>';
-        } else {
-            logoLink.innerHTML = 'LaB<span class="dot">.</span>';
-        }
+    /**
+     * Application State Management
+     * Handles saving and loading user preferences from LocalStorage
+     */
+    const settings = {
+        save: (key, value) => localStorage.setItem(`lab-${key}`, value),
+        load: (key) => localStorage.getItem(`lab-${key}`)
     };
 
-    // --- LOGIC: APPLY THEME ---
+    /**
+     * Theme Controller
+     * Applies the data-theme attribute to the HTML root
+     */
     const applyTheme = (theme) => {
-        html.setAttribute('data-theme', theme);
-        localStorage.setItem('lab-theme', theme);
-        updateLogo(theme);
-    };
-
-    // --- LOGIC: APPLY FONT ---
-    const applyFont = (font) => {
-        html.setAttribute('data-font', font);
-        localStorage.setItem('lab-font', font);
-    };
-
-    // --- EVENT LISTENERS ---
-    themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
-    fontSelect.addEventListener('change', (e) => applyFont(e.target.value));
-
-    // --- INIT (LOAD SETTINGS) ---
-    const savedTheme = localStorage.getItem('lab-theme') || 'deep-void';
-    const savedFont = localStorage.getItem('lab-font') || 'auto';
-
-    themeSelect.value = savedTheme;
-    fontSelect.value = savedFont;
-    
-    applyTheme(savedTheme);
-    applyFont(savedFont);
-
-    // --- FORM SIMULATION ---
-    document.getElementById('join-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = e.target.querySelector('button');
-        const originalText = btn.innerText;
+        if (!theme) return;
+        htmlElement.setAttribute('data-theme', theme);
+        settings.save('theme', theme);
         
-        btn.innerText = 'Transmitting...';
-        btn.style.opacity = '0.7';
+        // Console log for debugging (can be removed for production)
+        console.log(`System: Theme shifted to ${theme.toUpperCase()}`);
+    };
 
-        setTimeout(() => {
-            alert('Signal Received. Welcome to the LaB database.');
-            btn.innerText = originalText;
-            btn.style.opacity = '1';
-            e.target.reset();
-        }, 1500);
+    /**
+     * Font Controller
+     * Applies the data-font attribute to the HTML root
+     */
+    const applyFont = (font) => {
+        if (!font) return;
+        htmlElement.setAttribute('data-font', font);
+        settings.save('font', font);
+    };
+
+    // --- Event Listeners ---
+
+    themeSelect.addEventListener('change', (e) => {
+        applyTheme(e.target.value);
     });
+
+    fontSelect.addEventListener('change', (e) => {
+        applyFont(e.target.value);
+    });
+
+    /**
+     * Form Submission Logic
+     * Simulates a secure transmission to the LaB servers
+     */
+    if (joinForm) {
+        joinForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = joinForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+
+            // Visual feedback for transmission
+            submitBtn.disabled = true;
+            submitBtn.innerText = "TRANSMITTING SIGNAL...";
+            submitBtn.style.opacity = "0.6";
+
+            setTimeout(() => {
+                alert("APPLICATION RECEIVED. Welcome to the collective. We will reach out on your frequency soon.");
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalText;
+                submitBtn.style.opacity = "1";
+                joinForm.reset();
+            }, 2000);
+        });
+    }
+
+    /**
+     * System Initialization
+     * Recalls user preferences on page load
+     */
+    const init = () => {
+        const savedTheme = settings.load('theme') || 'deep-void';
+        const savedFont = settings.load('font') || 'auto';
+
+        // Sync UI Selectors with saved state
+        themeSelect.value = savedTheme;
+        fontSelect.value = savedFont;
+
+        // Apply preferences
+        applyTheme(savedTheme);
+        applyFont(savedFont);
+    };
+
+    init();
 });
