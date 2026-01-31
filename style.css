@@ -1,4 +1,4 @@
-/* --- MOTYWY I CZCIONKI --- */
+/* --- MOTYWY (KOLORY I DOMYŚLNE CZCIONKI) --- */
 :root {
     --bg-1: #050505; --bg-2: #111; --accent: #0077ff; --text: #fff;
     --font-h: 'Space Grotesk', sans-serif; --font-p: 'Inter', sans-serif;
@@ -24,52 +24,61 @@
     --font-h: 'Libre Baskerville', serif; --font-p: 'Inter', sans-serif;
 }
 
-/* --- ANIMOWANE TŁO --- */
+/* --- SYSTEM NADPISYWANIA CZCIONEK --- */
+body.font-tech { --font-h: 'Space Grotesk'; --font-p: 'Roboto Condensed'; }
+body.font-future { --font-h: 'Orbitron'; --font-p: 'Inter'; }
+body.font-clean { --font-h: 'Poppins'; --font-p: 'Inter'; }
+body.font-code { --font-h: 'JetBrains Mono'; --font-p: 'JetBrains Mono'; }
+body.font-classic { --font-h: 'Libre Baskerville'; --font-p: 'Libre Baskerville'; }
+
+/* --- STYLIZACJA BAZOWA --- */
+* { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.5s, color 0.5s, transform 0.3s; }
+body { color: var(--text); font-family: var(--font-p); line-height: 1.6; min-height: 100vh; }
+h1, h2, h3, h4 { font-family: var(--font-h); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Animowane tło gradientowe */
 .animated-bg {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-    background: linear-gradient(-45deg, var(--bg-1), var(--bg-2), var(--bg-1));
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+    background: linear-gradient(-45deg, var(--bg-1), var(--bg-2), var(--bg-1), var(--accent));
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    animation: gradientShift 15s ease infinite;
+    opacity: 0.6;
 }
 
-@keyframes gradientBG {
+@keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* --- STYLIZACJA --- */
-* { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.4s ease; }
-body { color: var(--text); font-family: var(--font-p); line-height: 1.6; }
-h1, h2, h3 { font-family: var(--font-h); }
-
-header { padding: 1.5rem 5%; background: rgba(0,0,0,0.5); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.1); }
+/* --- UI ELEMENTS --- */
+header { padding: 1.2rem 5%; background: rgba(0,0,0,0.7); backdrop-filter: blur(15px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.1); }
 nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 2rem; font-weight: 700; font-family: var(--font-h); letter-spacing: -1px; }
+.logo { font-size: 1.8rem; font-weight: 900; color: var(--text); }
 .logo span { color: var(--accent); }
 
-.nav-links { display: flex; list-style: none; gap: 2rem; }
-.nav-links a { text-decoration: none; color: inherit; opacity: 0.7; font-size: 0.9rem; }
+.nav-links { display: flex; list-style: none; gap: 1.5rem; }
+.nav-links a { text-decoration: none; color: inherit; font-size: 0.85rem; opacity: 0.7; font-weight: bold; }
 .nav-links a:hover { opacity: 1; color: var(--accent); }
 
-.hero { height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-.hero h1 { font-size: clamp(3rem, 10vw, 6rem); line-height: 0.9; margin-bottom: 20px; }
+.controls { display: flex; gap: 10px; }
+select { background: rgba(255,255,255,0.1); color: var(--text); border: 1px solid var(--accent); padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; }
 
-.content-section { padding: 80px 10%; }
-.section-title { font-size: 2.5rem; margin-bottom: 40px; border-left: 5px solid var(--accent); padding-left: 20px; }
+/* --- CONTENT --- */
+.hero { height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 10%; }
+.hero h1 { font-size: clamp(2.5rem, 10vw, 5.5rem); margin-bottom: 20px; line-height: 1; }
+.hero p { max-width: 650px; opacity: 0.8; font-size: 1.1rem; }
+
+.content-section { padding: 100px 10%; }
+.manifest-box { background: rgba(255,255,255,0.03); padding: 50px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05); }
+.manifest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
+.m-item h4 { color: var(--accent); margin-bottom: 10px; }
 
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.card { background: rgba(255,255,255,0.05); padding: 40px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
-.tag { font-size: 0.7rem; color: var(--accent); font-weight: bold; text-transform: uppercase; }
+.card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+.tag { font-size: 0.65rem; color: var(--accent); font-weight: 900; letter-spacing: 2px; }
 
-.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-.gallery-item { height: 200px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-weight: bold; }
+.primary-btn { background: var(--accent); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+.secondary-btn { background: transparent; border: 1px solid var(--accent); color: var(--text); padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-top: 15px; font-size: 0.8rem; }
 
-.art-link { display: flex; justify-content: space-between; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: inherit; }
-.art-link:hover { background: rgba(255,255,255,0.05); }
-
-.form-container { max-width: 600px; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 40px; border-radius: 20px; }
-input, select, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 8px; }
-.primary-btn { width: 100%; padding: 15px; background: var(--accent); border: none; color: white; font-weight: bold; cursor: pointer; border-radius: 8px; }
-
-footer { padding: 40px; text-align: center; opacity: 0.5; font-size: 0.8rem; }
+footer { padding: 50px; text-align: center; opacity: 0.4; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.1); }
