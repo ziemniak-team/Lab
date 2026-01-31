@@ -1,43 +1,70 @@
-<!DOCTYPE html>
-<html lang="pl" data-theme="deep-void">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaB | Life and Beyond</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">LaB<span>.</span></div>
-            <ul class="nav-links">
-                <li><a href="#projects">Projekty</a></li>
-                <li><a href="#repo">Repozytorium</a></li>
-                <li><a href="#articles">Artykuły</a></li>
-            </ul>
-            <div class="controls">
-                <select id="theme-select">
-                    <option value="deep-void">Deep Void (OLED)</option>
-                    <option value="marsian-dust">Marsian Dust</option>
-                    <option value="retro-voyager">Retro Voyager</option>
-                    <option value="moonlight">Moonlight</option>
-                </select>
-                <button class="login-btn">Zaloguj</button>
-            </div>
-        </nav>
-    </header>
+<section id="projects" class="section-container">
+    <h2 class="section-title">Nasze Misje</h2>
+    <div class="project-grid">
+        <article class="project-card">
+            <div class="project-icon">🧠</div>
+            <h3>Project AURA</h3>
+            <p>Open-source AI do optymalizacji zużycia zasobów w bazach pozaziemskich. Przewiduje zapotrzebowanie na tlen i energię.</p>
+            <span class="status">Status: Prototypowanie</span>
+            <button class="small-btn">Zobacz kod</button>
+        </article>
 
-    <main>
-        <section class="hero">
-            <h1>Ludzkość poza horyzontem.</h1>
-            <p>Budujemy AI, roboty i przyszłość – open source, po kosztach, dla każdego.</p>
-            <div class="cta-group">
-                <button class="primary-btn">Eksploruj Projekty</button>
-                <button class="secondary-btn">Dołącz do Społeczności</button>
-            </div>
-        </section>
-    </main>
+        <article class="project-card">
+            <div class="project-icon">🤖</div>
+            <h3>M-STRIDER</h3>
+            <p>Sześcionożny robot kroczący zaprojektowany do poruszania się po jaskiniach lawowych na Księżycu. Wydrukuj go w 3D.</p>
+            <span class="status">Status: Testy sprzętowe</span>
+            <button class="small-btn">Pobierz CAD</button>
+        </article>
 
-    <script src="script.js"></script>
-</body>
-</html>
+        <article class="project-card">
+            <div class="project-icon">🔭</div>
+            <h3>DeepScope v2</h3>
+            <p>Tani system optyczny połączony z siecią neuronową do automatycznego wykrywania obiektów NEO (Near Earth Objects).</p>
+            <span class="status">Status: Aktywny</span>
+            <button class="small-btn">Dokumentacja</button>
+        </article>
+    </div>
+</section>
+
+<hr class="divider">
+
+<section id="articles" class="section-container">
+    <div class="section-header">
+        <h2 class="section-title">Baza Wiedzy</h2>
+        <a href="#" class="view-all">Wszystkie artykuły →</a>
+    </div>
+    <div class="article-list">
+        <article class="article-item">
+            <div class="date">31 Stycznia, 2026</div>
+            <h3>Jak przesyłać dane na odległość 1 AU?</h3>
+            <p>Analiza protokołów komunikacyjnych dla dalekiego kosmosu...</p>
+        </article>
+        <article class="article-item">
+            <div class="date">15 Stycznia, 2026</div>
+            <h3>Dlaczego Open Source uratuje kolonizację?</h3>
+            <p>O tym, dlaczego monopol korporacyjny w kosmosie to zły pomysł...</p>
+        </article>
+    </div>
+</section>
+
+<hr class="divider">
+
+<section id="finance" class="finance-summary">
+    <h2>Transparentność Finansowa</h2>
+    <p>Każda wpłata trafia bezpośrednio do obiegu. Nie generujemy zysku, generujemy postęp.</p>
+    <div class="finance-stats">
+        <div class="stat">
+            <span class="value">90%</span>
+            <span class="label">Materiały i Surowce</span>
+        </div>
+        <div class="stat">
+            <span class="value">10%</span>
+            <span class="label">Podatki i Serwery</span>
+        </div>
+        <div class="stat highlight">
+            <span class="value">0%</span>
+            <span class="label">Marży i Dywidend</span>
+        </div>
+    </div>
+</section>
