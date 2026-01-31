@@ -2,52 +2,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeSelect = document.getElementById('theme-select');
     const htmlElement = document.documentElement;
 
-    /**
-     * FUNKCJA ZMIANY MOTYWU
-     */
-    const setTheme = (themeName) => {
-        htmlElement.setAttribute('data-theme', themeName);
-        localStorage.setItem('lab-theme', themeName);
-        console.log(`Motyw zmieniony na: ${themeName}`);
+    // Funkcja zmieniająca motyw
+    const applyTheme = (theme) => {
+        htmlElement.setAttribute('data-theme', theme);
+        localStorage.setItem('lab-theme', theme);
     };
 
-    // Słuchacz zdarzeń dla rozwijanej listy
-    themeSelect.addEventListener('change', (event) => {
-        setTheme(event.target.value);
+    // Obsługa wyboru z listy
+    themeSelect.addEventListener('change', (e) => {
+        applyTheme(e.target.value);
     });
 
-    /**
-     * INICJALIZACJA STRONY
-     */
-    const init = () => {
-        const savedTheme = localStorage.getItem('lab-theme');
-        
-        if (savedTheme) {
-            htmlElement.setAttribute('data-theme', savedTheme);
-            themeSelect.value = savedTheme;
-        } else {
-            // Domyślny startowy motyw
-            setTheme('deep-void');
-        }
-    };
+    // Wczytywanie zapisanego motywu przy starcie
+    const savedTheme = localStorage.getItem('lab-theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+        themeSelect.value = savedTheme;
+    }
 
-    // Obsługa prostych animacji przy przewijaniu
-    const observerOptions = { threshold: 0.1 };
+    // Prosta animacja pojawiania się elementów przy przewijaniu
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll('.project-card, .article-card').forEach(el => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(20px)";
-        el.style.transition = "all 0.6s ease-out";
-        observer.observe(el);
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s ease-out';
+        observer.observe(card);
     });
-
-    init();
 });
