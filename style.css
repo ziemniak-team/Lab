@@ -1,9 +1,14 @@
-/* Definicje Motywów */
-[data-theme="deep-void"] {
+/* --- DEFINICJE MOTYWÓW --- */
+:root {
+    /* Domyślny: Deep Void */
     --bg: #050505;
     --text: #e0e0e0;
     --accent: #0077ff;
-    --surface: #111;
+    --surface: #111111;
+    --card-bg: #1a1a1a;
+    --border: #333333;
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
 }
 
 [data-theme="marsian-dust"] {
@@ -11,70 +16,120 @@
     --text: #ffddd2;
     --accent: #e76f51;
     --surface: #3d1a11;
+    --card-bg: #4e2419;
+    --border: #6d3121;
 }
 
 [data-theme="retro-voyager"] {
-    --bg: #000;
+    --bg: #000000;
     --text: #00ff41;
     --accent: #00ff41;
-    --surface: #0a200a;
-    --font: 'Courier New', monospace;
+    --surface: #0a1a0a;
+    --card-bg: #050f05;
+    --border: #00ff41;
+    --font-main: 'Courier New', monospace;
+    --font-heading: 'Courier New', monospace;
 }
 
 [data-theme="moonlight"] {
-    --bg: #f0f2f5;
-    --text: #1a1a1a;
-    --accent: #6c757d;
-    --surface: #ffffff;
+    --bg: #e9ecef;
+    --text: #212529;
+    --accent: #495057;
+    --surface: #dee2e6;
+    --card-bg: #ffffff;
+    --border: #adb5bd;
 }
 
-/* Reset i Główne Style */
-* { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
+[data-theme="supernova"] {
+    --bg: #ffffff;
+    --text: #1a1a1a;
+    --accent: #ffd700;
+    --surface: #f8f9fa;
+    --card-bg: #ffffff;
+    --border: #ffd700;
+}
+
+/* --- RESET I UKŁAD --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg);
     color: var(--text);
-    font-family: var(--font, 'Inter', sans-serif);
-    line-height: 1.6;
+    font-family: var(--font-main);
+    transition: background 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
 }
 
+h1, h2, h3, h4 { font-family: var(--font-heading); }
+
+.section-container { padding: 80px 10%; }
+.divider { border: 0; border-top: 1px solid var(--border); margin: 0 10%; }
+
+/* --- NAWIGACJA --- */
 header {
-    padding: 1rem 5%;
+    position: sticky; top: 0; z-index: 1000;
     background: var(--surface);
-    border-bottom: 1px solid var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 5%;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo { font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
 .logo span { color: var(--accent); }
 
 .nav-links { display: flex; list-style: none; gap: 2rem; }
-.nav-links a { text-decoration: none; color: var(--text); font-weight: 500; }
+.nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; opacity: 0.8; }
+.nav-links a:hover { opacity: 1; color: var(--accent); }
 
+.controls { display: flex; gap: 1rem; align-items: center; }
+select { 
+    background: var(--bg); color: var(--text); 
+    border: 1px solid var(--border); padding: 5px; border-radius: 4px;
+}
+
+/* --- HERO --- */
 .hero {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 10%;
+    height: 90vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; background: radial-gradient(circle at center, var(--surface) 0%, var(--bg) 100%);
 }
 
-.hero h1 { font-size: 4rem; margin-bottom: 1rem; }
+.hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1.1; margin-bottom: 20px; }
+.hero p { max-width: 600px; margin: 0 auto 30px; font-size: 1.2rem; opacity: 0.9; }
 
-button {
-    padding: 12px 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    font-weight: bold;
+/* --- PRZYCISKI --- */
+.primary-btn, .secondary-btn, .login-btn {
+    padding: 12px 28px; border-radius: 2px; font-weight: bold; cursor: pointer; 
+    text-decoration: none; display: inline-block; transition: 0.3s;
 }
 
-.primary-btn { background: var(--accent); color: #fff; margin-right: 10px; }
-.secondary-btn { background: transparent; border: 2px solid var(--accent); color: var(--text); }
+.primary-btn { background: var(--accent); color: white; border: none; }
+.secondary-btn { border: 1px solid var(--accent); color: var(--accent); background: transparent; }
+.primary-btn:hover { filter: brightness(1.2); transform: translateY(-2px); }
+
+/* --- KARTY PROJEKTÓW --- */
+.project-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; margin-top: 40px;
+}
+
+.project-card {
+    background: var(--card-bg); padding: 30px; border: 1px solid var(--border);
+    border-radius: 8px; position: relative;
+}
+
+.project-icon { font-size: 2.5rem; margin-bottom: 15px; }
+.status-tag { 
+    font-size: 0.7rem; text-transform: uppercase; 
+    background: var(--border); padding: 4px 8px; border-radius: 4px; 
+}
+
+/* --- FINANSE --- */
+.finance-section { background: var(--surface); padding: 60px 10%; border-radius: 20px; margin: 40px 10%; }
+.stats-container { display: flex; justify-content: space-around; margin-top: 30px; flex-wrap: wrap; gap: 20px; }
+.stat-item { text-align: center; }
+.stat-value { display: block; font-size: 3rem; font-weight: bold; color: var(--accent); }
+.highlight .stat-value { color: #00ff41; }
+
+footer { padding: 40px; text-align: center; border-top: 1px solid var(--border); opacity: 0.6; font-size: 0.8rem; }
