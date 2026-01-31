@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaB | Life and Beyond - Vision for Humanity</title>
+    <title>LaB | Life and Beyond</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Inter:wght@300;400;700&family=JetBrains+Mono&family=Libre+Baskerville&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Inter:wght@300;400;700&family=JetBrains+Mono&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;600&family=Orbitron:wght@400;900&family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-default">
     <div class="animated-bg"></div>
 
     <header>
@@ -16,17 +16,24 @@
             <ul class="nav-links">
                 <li><a href="#manifest">Manifest</a></li>
                 <li><a href="#missions">Misje</a></li>
-                <li><a href="#gallery">Galeria</a></li>
                 <li><a href="#articles">Wiedza</a></li>
                 <li><a href="#join">Dołącz</a></li>
             </ul>
             <div class="controls">
-                <select id="theme-select">
+                <select id="theme-select" title="Zmień motyw">
                     <option value="deep-void">Deep Void</option>
                     <option value="marsian-dust">Marsian Dust</option>
                     <option value="retro-voyager">Retro Voyager</option>
                     <option value="nebula">Nebula Dreams</option>
                     <option value="titan-ice">Titan Ice</option>
+                </select>
+                <select id="font-select" title="Zmień czcionkę">
+                    <option value="font-default">Domyślna dla motywu</option>
+                    <option value="font-tech">Space Grotesk (Tech)</option>
+                    <option value="font-future">Orbitron (Futuristic)</option>
+                    <option value="font-clean">Inter (Modern)</option>
+                    <option value="font-code">JetBrains Mono (Dev)</option>
+                    <option value="font-classic">Baskerville (Classic)</option>
                 </select>
             </div>
         </nav>
@@ -41,57 +48,30 @@
         <section id="manifest" class="content-section">
             <div class="manifest-box">
                 <h2>Manifest LaB</h2>
-                <p>Ziemia jest kolebką ludzkości, ale nie można wiecznie mieszkać w kolebce. W LaB wierzymy, że dostęp do technologii pozwalającej przetrwać poza Układem Słonecznym jest fundamentalnym prawem przyszłych pokoleń.</p>
-                <ul>
-                    <li><strong>Open-Source:</strong> Każdy algorytm AI i schemat robota jest publiczny.</li>
-                    <li><strong>At-Cost:</strong> Hardware sprzedajemy bez marży, tylko by pokryć surowce.</li>
-                    <li><strong>Community-Led:</strong> Nie mamy prezesów, mamy wizjonerów.</li>
-                </ul>
+                <p>Ziemia jest kolebką ludzkości, ale nie można wiecznie mieszkać w kolebce. W LaB wierzymy, że technologia pozwalająca przetrwać poza Układem Słonecznym jest fundamentalnym prawem przyszłych pokoleń.</p>
+                <div class="manifest-grid">
+                    <div class="m-item"><h4>Open Source</h4><p>Wszystkie schematy AI i robotów są publiczne.</p></div>
+                    <div class="m-item"><h4>At-Cost</h4><p>Sprzęt sprzedawany bez marży, tylko za cenę surowców.</p></div>
+                    <div class="m-item"><h4>No Fees</h4><p>Pasjonaci pracują z wizją, nie dla prowizji.</p></div>
+                </div>
             </div>
         </section>
 
         <section id="missions" class="content-section">
-            <h2 class="section-title">Aktywne Misje</h2>
+            <h2 class="section-title">Nasze Misje</h2>
             <div class="grid">
                 <div class="card">
-                    <span class="tag">AI</span>
+                    <span class="tag">AI / Control</span>
                     <h3>Project AURA</h3>
-                    <p>System operacyjny dla samowystarczalnych kolonii. Zarządza energią, tlenem i produkcją żywności.</p>
+                    <p>Autonomiczny system zarządzania ekosystemem bazy. Optymalizacja tlenu, energii i wody w czasie rzeczywistym.</p>
+                    <button class="secondary-btn">Dokumentacja</button>
                 </div>
                 <div class="card">
-                    <span class="tag">Robot</span>
+                    <span class="tag">Robotics</span>
                     <h3>M-STRIDER</h3>
-                    <p>Wielozadaniowy łazik kroczący do eksploracji pionowych jaskiń na Księżycu i Marsie.</p>
+                    <p>Sześcionożny łazik pionowego startu. Zaprojektowany do schodzenia do jaskiń lawowych na Księżycu.</p>
+                    <button class="secondary-btn">Pliki CAD</button>
                 </div>
-                <div class="card">
-                    <span class="tag">Hardware</span>
-                    <h3>StarLinker</h3>
-                    <p>Otwarta sieć komunikacji laserowej dalekiego zasięgu (Deep Space Network).</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="gallery" class="content-section">
-            <h2 class="section-title">Galeria Wizji</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item" style="background: rgba(255,255,255,0.1);">Prototyp AURA</div>
-                <div class="gallery-item" style="background: rgba(255,255,255,0.1);">Plany M-STRIDER</div>
-                <div class="gallery-item" style="background: rgba(255,255,255,0.1);">Laboratorium LaB</div>
-                <div class="gallery-item" style="background: rgba(255,255,255,0.1);">Koncepcja Bazy</div>
-            </div>
-        </section>
-
-        <section id="articles" class="content-section">
-            <h2 class="section-title">Artykuły (EN)</h2>
-            <div class="article-links">
-                <a href="articles/why-open-source-space.html" class="art-link">
-                    <span>Jan 20, 2026</span>
-                    <h4>Why Open Source is the only way to the Stars</h4>
-                </a>
-                <a href="articles/robotics-on-titan.html" class="art-link">
-                    <span>Jan 15, 2026</span>
-                    <h4>Designing Robotics for Titan's Methane Oceans</h4>
-                </a>
             </div>
         </section>
 
@@ -101,20 +81,15 @@
                 <form id="contact-form">
                     <input type="text" placeholder="Imię / Nick" required>
                     <input type="email" placeholder="Email" required>
-                    <select>
-                        <option>Deweloper AI</option>
-                        <option>Inżynier Hardware</option>
-                        <option>Pasjonat / Edukator</option>
-                    </select>
-                    <textarea placeholder="Dlaczego chcesz z nami budować przyszłość?"></textarea>
-                    <button type="submit" class="primary-btn">Wyślij Zgłoszenie</button>
+                    <textarea placeholder="Twoja rola w kolonizacji (AI, Hardware, Edukacja...)?"></textarea>
+                    <button type="submit" class="primary-btn">Wyślij sygnał</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>LaB (Life and Beyond) &copy; 2026. Made by enthusiasts for the future of humanity.</p>
+        <p>LaB (Life and Beyond) &copy; 2026. Non-profit Open Source Initiative.</p>
     </footer>
 
     <script src="script.js"></script>
